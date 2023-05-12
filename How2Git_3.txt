@@ -1,0 +1,193 @@
+WORKING WITH GITHUB
+
+To download the entire repository into a Linux directory, we use
+
+'git', a Linux program that should be available by default
+
+Like this:
+
+git clone https://github.com/grivis/IgorTestMyBackup IgorTestGit
+
+This will create a local folder named IgorTestGit
+
+drwxrwxr-x 3 grivis grivis  4096 Oct  7 08:57 IgorTestGit
+
+
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/MyBackUp/IgorTestGit$ ls -l
+total 16
+-rw-rw-r-- 1 grivis grivis  673 Oct  7 08:57 AWS_2.txt
+-rw-rw-r-- 1 grivis grivis  834 Oct  7 08:57 AWS_3.txt
+-rw-rw-r-- 1 grivis grivis  227 Oct  7 08:57 AWS.txt
+-rw-rw-r-- 1 grivis grivis 2578 Oct  7 08:57 How2Git.txt
+
+
+If repeated, this command will not work again; a copy of the target directory will not be created
+
+When downloading the repository, git program will create .git directory inside the target directory!
+
+
+-------------------------------
+
+UPLOAD TO GITHUB
+
+If Git is not installed on your Linux
+
+sudo apt-get install git
+
+Configure GitHub
+
+git config --global user.name "user_name"
+git config --global user.email "email_id"
+
+You should have an account with GitHub
+
+Initialize a repository on your Linux machine
+
+git init IgorMainBackup
+
+This will create a directory.
+drwxrwxr-x 3 grivis grivis  4096 Oct  7 09:12 IgorMainBackup
+Then
+
+cd IgorMainBackup
+
+Create and or move files here, that you want to upload to GitHub
+
+git add .
+
+This will add all files and folders inside IgorMainBackup
+
+Commit (prepare) the upload
+
+git commit -m "Main backup Repo"
+
+Create a repository on GitHub with the same name
+e.g. IgorMainBackup
+
+Add origin
+
+git remote add origin https://github.com/grivis/IgorMainBackup.git
+
+https://github.com/grivis/IgorMainBackup
+
+Push the files into GitHub
+
+git push https://*****************@github.com/grivis/IgorMainBackup.git
+
+********************** is your GitHub personal token
+You can get it if you have a GitHub account
+
+Settings --> Developer Settings --> Personal access tokens. 
+
+After 'push' your files should be there!!
+
+g********* generated October 7th
+
+git push https://**********@github.com/grivis/IgorMainBackup.git
+
+
+https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/
+
+ADDING NEW AND EDITED FILES
+
+git add --all
+
+This will add new files and files changed since the last commit
+
+git status
+
+
+git commit -m '<commit_message>'
+
+git push https://****************q@github.com/grivis/IgorMainBackup.git
+
+You will see changes in your GitHub repository
+
+https://support.atlassian.com/bitbucket-cloud/docs/add-edit-and-commit-to-source-files/
+
+https://mirrors.edge.kernel.org/pub/software/scm/git/docs/
+
+
+REAL SCENARIO
+
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ$ git init GitStandardTest
+Initialised empty Git repository in /home/grivis/Documents/Active_2022_07/IgorJ/GitStandardTest/.git/
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ$ cd GitStandardTest/
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/GitStandardTest$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/GitStandardTest$ ls -al
+total 12
+drwxrwxr-x  3 grivis grivis 4096 Oct 13 17:20 .
+drwxrwxr-x 11 grivis grivis 4096 Oct 13 17:20 ..
+drwxrwxr-x  7 grivis grivis 4096 Oct 13 17:20 .git
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/GitStandardTest$ ls -al
+total 32
+drwxrwxr-x  3 grivis grivis 4096 Oct 13 17:21 .
+drwxrwxr-x 11 grivis grivis 4096 Oct 13 17:20 ..
+-rw-rw-r--  1 grivis grivis  673 Aug  5 07:42 AWS_2.txt
+-rw-rw-r--  1 grivis grivis  834 Sep  9 13:53 AWS_3.txt
+-rw-rw-r--  1 grivis grivis  227 Jul 30 08:36 AWS.txt
+drwxrwxr-x  7 grivis grivis 4096 Oct 13 17:20 .git
+-rw-rw-r--  1 grivis grivis 2766 Oct  7 09:38 How2Git_2.txt
+-rwxrwxrwx  1 grivis grivis 2578 Apr  1  2022 How2Git.txt
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/GitStandardTest$ git add .
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/GitStandardTest$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   AWS.txt
+	new file:   AWS_2.txt
+	new file:   AWS_3.txt
+	new file:   How2Git.txt
+	new file:   How2Git_2.txt
+
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/GitStandardTest$ git commit -m "Standard Git Commit"
+[master (root-commit) e858283] Standard Git Commit
+ 5 files changed, 275 insertions(+)
+ create mode 100644 AWS.txt
+ create mode 100644 AWS_2.txt
+ create mode 100644 AWS_3.txt
+ create mode 100755 How2Git.txt
+ create mode 100644 How2Git_2.txt
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/GitStandardTest$ git status
+On branch master
+nothing to commit, working tree clean
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/GitStandardTest$ git remote add origin https://github.com/grivis/GitStandardTest.git
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/GitStandardTest$ git test
+git: 'test' is not a git command. See 'git --help'.
+
+The most similar command is
+	reset
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/GitStandardTest$ git status
+On branch master
+nothing to commit, working tree clean
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/GitStandardTest$ git branch -M main
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/GitStandardTest$ git status
+On branch main
+nothing to commit, working tree clean
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/GitStandardTest$ git push https://*********@github.com/grivis/GitStandardTest.git
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 2.50 KiB | 2.50 MiB/s, done.
+Total 7 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/grivis/GitStandardTest.git
+ * [new branch]      main -> main
+(base) grivis@Grivis-Main:~/Documents/Active_2022_07/IgorJ/GitStandardTest$ 
+
+
+ATTENTION!!!! You should NEVER EVER include your personal token into any file uploaded to GitHub !!!!!
+
+********* -- generated October 13th. REMOVE before uploading!
+
+

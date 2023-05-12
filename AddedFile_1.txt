@@ -1,0 +1,2 @@
+We added this file after we cloned a repository.
+Clone is not a clown!

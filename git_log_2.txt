@@ -1,0 +1,81 @@
+## May 12th
+
+ git --version
+git version 2.17.1
+
+Like this:
+
+git clone https://github.com/AndrewCRMartin/biocomp2 AndrewMartin
+
+git clone https://github.com/grivis/ArtymTest1 ArtymTest1
+
+Works!
+
+UPLOAD TO GITHUB
+
+If Git is not installed on your Linux
+
+sudo apt-get install git
+
+Configure GitHub
+
+git config --global user.name "user_name"
+git config --global user.email "email_id"
+
+You should have an account with GitHub
+
+Initialize a repository on your Linux machine
+
+git init SecondRepo
+
+Create and or move files here, that you want to upload to GitHub
+
+git add .
+
+(base) grivis@Grivis-Main:~/Documents/Active2023/ArtiomKulakov/ArtymTest1$ git add .
+(base) grivis@Grivis-Main:~/Documents/Active2023/ArtiomKulakov/ArtymTest1$ git status
+On branch main
+Your branch is up-to-date with 'origin/main'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+    new file:   AddedFile_1.txt
+
+Commit (prepare) the upload
+
+git commit -m "Another file added May 12th"
+
+(base) grivis@Grivis-Main:~/Documents/Active2023/ArtiomKulakov/ArtymTest1$ git commit -m "Another file added May 12th"
+[main 74a1bce] Another file added May 12th
+ 1 file changed, 2 insertions(+)
+ create mode 100644 AddedFile_1.txt
+
+Add origin
+
+git remote add origin https://github.com/grivis/ArtymTest1.git
+
+Push the files into GitHub
+
+git push https://*****************@github.com/grivis/ArtymTest1.git
+
+********************** is your GitHub personal token
+You can get it if you have a GitHub account
+
+Settings --> Developer Settings --> Personal access tokens. 
+
+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 -- my current token
+
+git push https://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@github.com/grivis/ArtymTest1.git
+
+
+### May 15th
+
+Using Git without Github
+
+https://www.freecodecamp.org/news/get-started-with-version-control-and-git/
+https://www.makeuseof.com/tag/file-versioning-git/?newsletter_popup=1
+
+Create a new instance in AWS
+
+
